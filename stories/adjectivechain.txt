@@ -1,0 +1,10 @@
+Use Adjectives text/adjectives.txt
+
+Story
+  AdjectiveChain
+
+AdjectiveChain
+  Adjectives. " " AdjectiveChain
+  Adjectives.
+
+Generate Story
