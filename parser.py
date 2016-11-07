@@ -3,6 +3,8 @@ import shlex
 import sys
 
 
+VERBOSE = False
+
 def getFromFile( input_filename ):
     input_file = open(input_filename, 'r')
     return input_file.read().strip().split( '\n' )
@@ -82,12 +84,14 @@ def getVariable( token, variables, lists ):
 
     if var_id not in variables[var_list]:
         variables[var_list][var_id] = random.choice( lists[var_list] )
-        print 'Setting ' + var_id + ' (' + var_list + ') to value ' + variables[var_list][var_id]
+        if VERBOSE:
+            print 'Setting ' + var_id + ' (' + var_list + ') to value ' + variables[var_list][var_id]
 
     return variables[var_list][var_id]
 
 def generate( source, lists, rules, variables ):
-    print( 'Starting rule: ' + str( source ) )
+    if VERBOSE:
+        print( 'Starting rule: ' + str( source ) )
 
     while unusedCount( source ) > 0:
         result = []
