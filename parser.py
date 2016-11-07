@@ -74,10 +74,15 @@ def getVariable( token, variables, lists ):
     token_obj = token.split( '.' )
 
     var_list = token_obj[0]
-    var_id = token_obj[1]
+    var_id = False
+    if len( token_obj ) > 1:
+        var_id = token_obj[1]
 
     if var_list not in lists:
         dead( 'Attempted to use a list that does not exist (' + var_list + ')' )
+
+    if var_id is False:
+        return random.choice( lists[var_list] )
 
     if var_list not in variables:
         variables[var_list] = {}
