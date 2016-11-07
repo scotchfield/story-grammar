@@ -7,8 +7,14 @@ def getFromFile( input_filename ):
     input_file = open(input_filename, 'r')
     return input_file.read().strip().split( '\n' )
 
-def dead( line, st ):
-    print( 'ERROR Line ' + str( line ) + ': ' + st )
+def dead( st, line=False ):
+    line_st = ''
+
+    if line is not False:
+        line_st = ' Line ' + str( line )
+
+    print( 'SORRY' + line_st + ': ' + st )
+
     sys.exit(1)
 
 def parse( data ):
@@ -33,7 +39,7 @@ def parse( data ):
                 try:
                     story_lists[line_tokens[1]] = getFromFile( line_tokens[2] )
                 except IOError:
-                    dead( line_num, 'Could not open ' + line_tokens[2] )
+                    dead( 'Could not open ' + line_tokens[2], line_num )
             elif line_tokens[0].lower() == 'generate':
                 story_generate = line_tokens[1:]
             else:
@@ -68,10 +74,17 @@ def getVariable( token, variables, lists ):
     var_list = token_obj[0]
     var_id = token_obj[1]
 
-    if var_id not in variables:
-        variables[var_id] = random.choice( lists[var_list] )
+    if var_list not in lists:
+        dead( 'Attempted to use a list that does not exist (' + var_list + ')' )
 
-    return variables[var_id]
+    if var_list not in variables:
+        variables[var_list] = {}
+
+    if var_id not in variables[var_list]:
+        variables[var_list][var_id] = random.choice( lists[var_list] )
+        print 'Setting ' + var_id + ' (' + var_list + ') to value ' + variables[var_list][var_id]
+
+    return variables[var_list][var_id]
 
 def generate( source, lists, rules, variables ):
     print( 'Starting rule: ' + str( source ) )
@@ -85,7 +98,12 @@ def generate( source, lists, rules, variables ):
             elif isVariable( token ):
                 result.append( '"' + getVariable( token, variables, lists ) + '"' )
             else:
-                result.extend( random.choice( rules[token] ) )
+                try:
+                    result.extend( random.choice( rules[token] ) )
+                except KeyError:
+                    dead( 'Could not find rule ' + token + ' when generating. Please make sure this rule is defined.' )
+                except IndexError:
+                    dead( 'Could not choose a replacement rule, is ' + token + ' empty?' )
 
         source = result
 
@@ -95,7 +113,10 @@ def generate( source, lists, rules, variables ):
     return ''.join( source )
 
 
-input_filename = sys.argv[1]
+try:
+    input_filename = sys.argv[1]
+except IndexError:
+    dead( 'Please pass the filename as an argument. For example,\n> python parser.py stories/simple.txt' )
 input_file = open( input_filename, 'r' )
 story = input_file.read()
 
