@@ -1,0 +1,24 @@
+Use Names text/firstnames.txt
+Use Adjectives text/adjectives.txt
+Use Objects text/objects.txt
+
+Story
+  Introduction Middle End
+
+Introduction
+  AtFirst Describe
+
+AtFirst
+  "Once upon a time, there was a hero named " Names.Protagonist ". "
+
+Describe
+  Names.Protagonist " was a " Adjectives.ProtagonistAdjective " fighter. "
+  Names.Protagonist " was a " Adjectives.ProtagonistAdjective " warrior. "
+
+Middle
+  "Then " Names.Protagonist " went for a " Adjectives.ProtagonistAdjective " walk. "
+
+End
+  "And " Names.Protagonist " died. "
+
+Generate Story

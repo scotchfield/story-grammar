@@ -95,34 +95,11 @@ def generate( source, lists, rules, variables ):
     return ''.join( source )
 
 
-st = '''
-Use Names text/firstnames.txt
-Use Adjectives text/adjectives.txt
-Use Objects text/objects.txt
+input_filename = sys.argv[1]
+input_file = open( input_filename, 'r' )
+story = input_file.read()
 
-Story
-  Introduction Middle End
-
-Introduction
-  AtFirst Describe
-
-AtFirst
-  "Once upon a time, there was a hero named " Names.Protagonist ". "
-
-Describe
-  Names.Protagonist " was a " Adjectives.ProtagonistAdjective " fighter. "
-  Names.Protagonist " was a " Adjectives.ProtagonistAdjective " warrior. "
-
-Middle
-  "Then " Names.Protagonist " went for a " Adjectives.ProtagonistAdjective " walk. "
-
-End
-  "And " Names.Protagonist " died. "
-
-Generate Story'''
-
-
-( story_generate, story_lists, story_rules ) = parse( st )
+( story_generate, story_lists, story_rules ) = parse( story )
 result = generate( story_generate, story_lists, story_rules, {} )
 
 print( result )
