@@ -113,14 +113,15 @@ def generate( source, lists, rules, variables ):
     return ''.join( source )
 
 
-try:
-    input_filename = sys.argv[1]
-except IndexError:
-    dead( 'Please pass the filename as an argument. For example,\n> python parser.py stories/simple.txt' )
-input_file = open( input_filename, 'r' )
-story = input_file.read()
+if __name__ == "__main__":
+    try:
+        input_filename = sys.argv[1]
+    except IndexError:
+        dead( 'Please pass the filename as an argument. For example,\n> python parser.py stories/simple.txt' )
+    input_file = open( input_filename, 'r' )
+    story = input_file.read()
 
-( story_generate, story_lists, story_rules ) = parse( story )
-result = generate( story_generate, story_lists, story_rules, {} )
+    ( story_generate, story_lists, story_rules ) = parse( story )
+    result = generate( story_generate, story_lists, story_rules, {} )
 
-print( result )
+    print( result )
