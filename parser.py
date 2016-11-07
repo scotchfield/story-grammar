@@ -72,16 +72,13 @@ def isVariable( token ):
 
 def getVariable( token, variables, lists ):
     token_obj = token.split( '.' )
-
     var_list = token_obj[0]
-    var_id = False
-    if len( token_obj ) > 1:
-        var_id = token_obj[1]
+    var_id = token_obj[1]
 
     if var_list not in lists:
         dead( 'Attempted to use a list that does not exist (' + var_list + ')' )
 
-    if var_id is False:
+    if var_id is '':
         return random.choice( lists[var_list] )
 
     if var_list not in variables:
@@ -118,11 +115,15 @@ def generate( source, lists, rules, variables ):
 
     source = [ s.replace( '"', '' ) for s in source ]
     source = filter( None, source )
+    source = ''.join( source )
+    source = source.replace( '\\n', '\n' )
 
-    return ''.join( source )
+    return source
 
 
 if __name__ == "__main__":
+    VERBOSE = True
+
     try:
         input_filename = sys.argv[1]
     except IndexError:
