@@ -1,0 +1,63 @@
+Use Names text/firstnames.txt
+Use Adjectives text/adjectives.txt
+Use Objects text/objects.txt
+
+Story
+  Title Introduction Middle End
+
+Title
+  "The " Objects.ScaryObject " that was too " Adjectives.ScaryAdjective "\n\n"
+  Names.Antagonist " the " Adjectives.ScaryAdjective "\n\n"
+  Names.Antagonist " and the " Adjectives.ScaryAdjective " " Objects.ScaryObject "\n\n"
+
+Introduction
+  IntroductionOpener IntroductionMiddle IntroductionCloser "\n\n"
+
+IntroductionOpener
+  "Before I start, I want to say that this is story is " Adjectives. ". "
+  "I am, admittedly, a bit of an odd " Objects. ". "
+  "Nobody ever said I was " Adjectives. ". "
+
+IntroductionMiddle
+  "I mean, I've kept " Adjectives.ScaryAdjective " things for my entire life. " IntroductionMiddle
+  "In fact, my nickname in high school was " AdjectiveChain " " Names.Protagonist ". " IntroductionMiddle
+  ""
+
+AdjectiveChain
+  Adjectives. " " AdjectiveChain
+  Adjectives.
+
+IntroductionCloser
+  "That's why this story is so important to me."
+  "That's probably why you'll be so scared by this dreadful tale."
+  "And that's why I can never go home."
+  "Which is, of course, why I'm already dead."
+
+Middle
+  MiddleOpener MiddleMiddle MiddleCloser "\n\n"
+
+MiddleOpener
+  "yup "
+
+MiddleMiddle
+  "yup "
+
+MiddleCloser
+  "yup "
+
+End
+  EndOpener EndMiddle EndCloser "\n\n"
+
+EndOpener
+  "yup "
+
+EndMiddle
+  "yup "
+
+EndCloser
+  "I guess that's why I'm so " Adjectives.ScaryAdjective "."
+  "That was the last we ever saw of the " Objects.ScaryObject "."
+  "We never heard from " Names.Antagonist " again."
+  "And " Names.Antagonist " died."
+
+Generate Story
