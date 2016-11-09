@@ -37,7 +37,7 @@ Middle
   MiddleOpener MiddleMiddle MiddleCloser "\n\n"
 
 MiddleOpener
-  "yup "
+  "The " Objects.ScaryObject " was decorated with a " Adjectives. " scene full of " Adjectives. " " Objects. "s. "
 
 MiddleMiddle
   "yup "
