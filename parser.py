@@ -99,17 +99,24 @@ def generate( source, lists, rules, variables ):
         result = []
 
         for token in source:
-            if not unusedToken( token ):
-                result.append( token )
-            elif isVariable( token ):
-                result.append( '"' + getVariable( token, variables, lists ) + '"' )
-            else:
-                try:
-                    result.extend( random.choice( rules[token] ) )
-                except KeyError:
-                    dead( 'Could not find rule ' + token + ' when generating. Please make sure this rule is defined.' )
-                except IndexError:
-                    dead( 'Could not choose a replacement rule, is ' + token + ' empty?' )
+            token_count = 1
+
+            if token[-1] == '+':
+                token = token[:-1]
+                token_count = random.randint( 1, 10 )
+
+            for i in range( token_count ):
+                if not unusedToken( token ):
+                    result.append( token )
+                elif isVariable( token ):
+                    result.append( '"' + getVariable( token, variables, lists ) + '"' )
+                else:
+                    try:
+                        result.extend( random.choice( rules[token] ) )
+                    except KeyError:
+                        dead( 'Could not find rule ' + token + ' when generating. Please make sure this rule is defined.' )
+                    except IndexError:
+                        dead( 'Could not choose a replacement rule, is ' + token + ' empty?' )
 
         source = result
 

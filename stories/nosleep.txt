@@ -11,7 +11,7 @@ Title
   Names.Antagonist " and the " Adjectives.ScaryAdjective " " Objects.ScaryObject "\n\n"
 
 Introduction
-  IntroductionOpener IntroductionMiddle IntroductionCloser "\n\n"
+  IntroductionOpener IntroductionMiddle+ IntroductionCloser "\n\n"
 
 IntroductionOpener
   "Before I start, I want to say that this is story is " Adjectives. ". "
@@ -19,9 +19,8 @@ IntroductionOpener
   "Nobody ever said I was " Adjectives. ". "
 
 IntroductionMiddle
-  "I mean, I've kept " Adjectives.ScaryAdjective " things for my entire life. " IntroductionMiddle
-  "In fact, my nickname in high school was " AdjectiveChain " " Names.Protagonist ". " IntroductionMiddle
-  ""
+  "I mean, I've kept " Adjectives.ScaryAdjective " things for my entire life. "
+  "In fact, my nickname in high school was " AdjectiveChain " " Names.Protagonist ". "
 
 AdjectiveChain
   Adjectives. " " AdjectiveChain
@@ -34,7 +33,7 @@ IntroductionCloser
   "Which is, of course, why I'm already dead."
 
 Middle
-  MiddleOpener MiddleMiddle MiddleCloser "\n\n"
+  MiddleOpener MiddleMiddle+ MiddleCloser "\n\n"
 
 MiddleOpener
   "The " Objects.ScaryObject " was decorated with a " Adjectives. " scene full of " Adjectives. " " Objects. "s. "
@@ -46,7 +45,7 @@ MiddleCloser
   "yup "
 
 End
-  EndOpener EndMiddle EndCloser "\n\n"
+  EndOpener EndMiddle+ EndCloser "\n\n"
 
 EndOpener
   "yup "
