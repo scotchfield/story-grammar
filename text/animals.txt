@@ -1,0 +1,8 @@
+dog
+cat
+otter
+lion
+mouse
+aardvark
+elephant
+bird

@@ -1,0 +1,14 @@
+Use Animal text/animals.txt
+
+Story
+  Beginning End
+
+Beginning
+  "The " Animal.MyAnimal " "
+  "The " Animal.MyAnimal " "
+
+End
+  "was nice."
+  "was happy."
+
+Generate Story
