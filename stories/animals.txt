@@ -1,0 +1,12 @@
+Story
+  Beginning End
+
+Beginning
+  "The cat "
+  "The dog "
+
+End
+  "was nice."
+  "was happy."
+
+Generate Story
