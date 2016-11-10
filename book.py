@@ -25,7 +25,7 @@ book = ''
 
 # 52,000 words, since word counts can be inconsistent across programs.
 # Let's be generous with our writing, funny program!
-while wordCount( book ) < 52000:
+while wordCount( book ) < 55000:
     #parser.VERBOSE = True
     ( story_generate, story_lists, story_rules ) = parser.parse( story )
     result = parser.generate( story_generate, story_lists, story_rules, {} )
