@@ -3,7 +3,7 @@ Use Adjectives text/adjectives.txt
 Use Objects text/objects.txt
 
 Story
-  Title Introduction Middle End
+  Title Introduction Middle+ End
 
 Title
   "The " Objects.ScaryObject " that was too " Adjectives.ScaryAdjective "\n\n"
@@ -50,11 +50,11 @@ MiddleMiddle
   "This is my day. "
   "This is the first time I've heard something so " Adjectives.ScaryAdjective ". "
   "Great. Another " Objects.ScaryObject ", I say to myself. "
-  "So, " Names.Antagonist " says to me, you've got an eye on that " Objects.ScaryObject "?"
+  "So, " Names.Antagonist " says to me, you've got an eye on that " Objects.ScaryObject "? "
 
 MiddleCloser
-  "I stand still, shaking. "
-  "I'm still going through my pile. "
+  "I stand still, shaking."
+  "I'm still going through my pile."
 
 End
   EndOpener EndMiddle+ EndCloser "\n\n"
