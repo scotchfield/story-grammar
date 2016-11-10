@@ -21,6 +21,10 @@ IntroductionOpener
 IntroductionMiddle
   "I mean, I've kept " Adjectives.ScaryAdjective " things for my entire life. "
   "In fact, my nickname in high school was " AdjectiveChain " " Names.Protagonist ". "
+  "Please don't start yelling. "
+  Names.Antagonist " caused a lot of problems for me when I was growing up. "
+  "If it wasn't for " Names.Antagonist ", I probably would have grown up much differently. "
+  "Nobody ever asks nicely. "
 
 AdjectiveChain
   Adjectives. " " AdjectiveChain
@@ -37,21 +41,33 @@ Middle
 
 MiddleOpener
   "The " Objects.ScaryObject " was decorated with a " Adjectives. " scene full of " Adjectives. " " Objects. "s. "
+  "Like I said, it was a " Adjectives.ScaryAdjective " kind of night. "
+  "Nobody got any sleep that night, that's for sure. "
+  "When I first arrived, I felt a little " Adjectives. ". "
 
 MiddleMiddle
-  "yup "
+  "You do the math. "
+  "This is my day. "
+  "This is the first time I've heard something so " Adjectives.ScaryAdjective ". "
+  "Great. Another " Objects.ScaryObject ", I say to myself. "
+  "So, " Names.Antagonist " says to me, you've got an eye on that " Objects.ScaryObject "?"
 
 MiddleCloser
-  "yup "
+  "I stand still, shaking. "
+  "I'm still going through my pile. "
 
 End
   EndOpener EndMiddle+ EndCloser "\n\n"
 
 EndOpener
-  "yup "
+  "If you answered yes to any of " Names.Antagonist "'s questions, I've got bad news for you. "
+  "When we finally got a good look at the " Objects.ScaryObject ", we realized it was too late. "
 
 EndMiddle
-  "yup "
+  "I realized that " Names.Antagonist " put " Objects. " on top of my " Objects. ", and I start to book it out of there. "
+  "Never said I was good at this kind of thing. "
+  "Of all the things that would cause this, I wouldn't have ever suggested that my " Objects.ScaryObject " would be the thing to bring me down. "
+  "I'd be honoured, of course, even if it's my last " Objects.ScaryObject ". "
 
 EndCloser
   "I guess that's why I'm so " Adjectives.ScaryAdjective "."
